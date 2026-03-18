@@ -3,13 +3,26 @@ import "./globals.css"
 import Footer from "../components/layout/Footer"
 import Header from "../components/layout/Header"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://worldspeak.pl"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://wordspeak.pl"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Worldspeak | Szkoła językowa w Warszawie",
   description:
     "Worldspeak to szkoła językowa w Warszawie. Zajęcia online i stacjonarne dla dzieci, młodzieży i dorosłych.",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      {
+        url: "/icon.jpg",
+        type: "image/jpeg",
+      },
+    ],
+    shortcut: "/icon.jpg",
+    apple: "/apple-icon.jpg",
+  },
   openGraph: {
     title: "Worldspeak | Szkoła językowa w Warszawie",
     description:
@@ -18,6 +31,11 @@ export const metadata: Metadata = {
     siteName: "Worldspeak",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/logo.jpg",
+      },
+    ],
   },
 }
 

@@ -15,7 +15,7 @@ Projekt jest gotowy do wdrożenia na Vercel.
 
 1. Zaimportuj repozytorium do Vercela.
 2. W `Settings -> Environment Variables` dodaj zmienne z pliku `.env.example`.
-3. Ustaw `NEXT_PUBLIC_SITE_URL` na adres domeny, np. `https://worldspeak.pl`.
+3. Ustaw `NEXT_PUBLIC_SITE_URL` na adres domeny, np. `https://wordspeak.pl`.
 4. Wdróż projekt.
 
 ## Wysyłka formularza

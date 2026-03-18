@@ -7,7 +7,7 @@ export const companyInfo = {
   addressLine2: "Warszawa",
   addressFull: "02-936 Warszawa",
   email: "kontakt@worldspeak.pl",
-  website: "https://worldspeak.pl",
+  website: "https://wordspeak.pl",
   instagram: "https://www.instagram.com/worldspeakpl/",
   facebook: "https://www.facebook.com/worldspeakpl",
   googleReviewTextQuery:
