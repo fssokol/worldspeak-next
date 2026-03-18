@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #160d2b;
+  --muted: #625a76;
+  --line: rgba(160, 120, 255, 0.2);
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+    "Times New Roman", serif;
+  --accent: #8b2cf5;
+  --accent-strong: #731ce6;
+  --accent-soft: #f6efff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(139, 44, 245, 0.1), transparent 28%),
+    radial-gradient(circle at top right, rgba(214, 168, 255, 0.16), transparent 22%),
+    linear-gradient(180deg, #ffffff 0%, #fbf8ff 100%);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+button {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease;
+}
+
+::selection {
+  background: rgba(139, 44, 245, 0.18);
+  color: #160d2b;
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.section-shell {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 70px rgba(78, 26, 148, 0.08);
+}

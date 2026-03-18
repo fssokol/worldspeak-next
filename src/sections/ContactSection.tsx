@@ -1,8 +1,11 @@
+import ContactForm from "@/components/forms/ContactForm"
+import { companyInfo, googleReviewsShareUrl } from "@/data/companyInfo"
+
 export default function ContactSection() {
   return (
-    <section id="kontakt" className="bg-slate-50">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-violet-700">
+    <section id="kontakt" className="bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#8b2cf5]">
           Kontakt
         </p>
 
@@ -16,59 +19,67 @@ export default function ContactSection() {
         </p>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="rounded-[2rem] border border-[#eadcff] bg-white p-8 shadow-[0_18px_50px_rgba(120,46,214,0.08)]">
             <h3 className="text-3xl font-bold text-slate-950">Porozmawiajmy!</h3>
             <p className="mt-4 text-slate-600">
               Krótka wiadomość wystarczy, żeby rozpocząć.
             </p>
 
             <div className="mt-6 space-y-4">
-              <div className="rounded-2xl border border-slate-200 p-4">
+              <div className="rounded-2xl border border-[#eadcff] p-4">
                 Warszawa oraz zajęcia online
               </div>
-              <div className="rounded-2xl border border-slate-200 p-4">
-                kontakt@worldspeak.pl
+              <div className="rounded-2xl border border-[#eadcff] p-4">
+                {companyInfo.email}
               </div>
-              <div className="rounded-2xl border border-slate-200 p-4">
-                +48 000 000 000
-              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href={googleReviewsShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full bg-[#8b2cf5] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(139,44,245,0.28)] transition hover:-translate-y-0.5 hover:bg-[#741ce8]"
+              >
+                Google
+              </a>
+
+              <a
+                href={companyInfo.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full border border-[#eadcff] bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-[#caa7ff]"
+              >
+                Facebook
+              </a>
+
+              <a
+                href={companyInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full border border-[#eadcff] bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-[#caa7ff]"
+              >
+                Instagram
+              </a>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="rounded-[2rem] border border-[#eadcff] bg-white p-8 shadow-[0_18px_50px_rgba(120,46,214,0.08)]">
             <h3 className="text-3xl font-bold text-slate-950">Napisz do nas!</h3>
             <p className="mt-4 text-slate-600">
               Wypełnij formularz, a Worldspeak pomoże dobrać odpowiednią formę
               nauki.
             </p>
 
-            <form className="mt-6 grid gap-4">
-              <input
-                type="text"
-                placeholder="Imię i nazwisko"
-                className="rounded-2xl border border-slate-300 px-4 py-3"
-              />
-              <input
-                type="email"
-                placeholder="Adres e-mail"
-                className="rounded-2xl border border-slate-300 px-4 py-3"
-              />
-              <input
-                type="text"
-                placeholder="Telefon"
-                className="rounded-2xl border border-slate-300 px-4 py-3"
-              />
-              <textarea
-                placeholder="Napisz, jakiego kursu szukasz"
-                className="min-h-32 rounded-2xl border border-slate-300 px-4 py-3"
-              />
-              <button
-                type="button"
-                className="w-fit rounded-full bg-slate-950 px-6 py-3 font-semibold text-white"
-              >
-                Wyślij zgłoszenie
-              </button>
-            </form>
+            <ContactForm
+              source="Formularz kontaktowy"
+              topicOptions={[
+                { label: "Kontakt ogólny", value: "contact" },
+                { label: "Zajęcia online", value: "online" },
+                { label: "Mokotów", value: "mokotow" },
+                { label: "Wilanów", value: "wilanow" },
+              ]}
+            />
           </div>
         </div>
       </div>

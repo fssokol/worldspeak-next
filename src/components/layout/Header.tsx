@@ -1,145 +1,177 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
+import type { MouseEvent } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+const HEADER_OFFSET = 96
+
+function scrollToElement(id: string) {
+  const element = document.getElementById(id)
+
+  if (!element) {
+    return false
+  }
+
+  const top = Math.max(
+    element.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET,
+    0,
+  )
+
+  window.scrollTo({ top, behavior: "smooth" })
+  return true
+}
 
 export default function Header() {
-  const [openAbout, setOpenAbout] = useState(false)
+  const pathname = usePathname()
+
+  const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      return
+    }
+
+    window.location.assign("/")
+  }
+
+  const handleSectionClick =
+    (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault()
+
+      if (pathname === "/") {
+        if (!scrollToElement(id)) {
+          window.location.assign(`/#${id}`)
+        }
+        return
+      }
+
+      window.location.assign(`/#${id}`)
+    }
+
+  const handleOnlineClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+
+    if (pathname === "/zajecia-online") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      return
+    }
+
+    window.location.assign("/zajecia-online")
+  }
+
+  const handleSignupClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+
+    if (pathname === "/zajecia-online") {
+      if (!scrollToElement("online-form")) {
+        window.location.assign("/zajecia-online#online-form")
+      }
+      return
+    }
+
+    if (pathname === "/") {
+      if (!scrollToElement("kontakt")) {
+        window.location.assign("/#kontakt")
+      }
+      return
+    }
+
+    window.location.assign("/#kontakt")
+  }
 
   return (
-    <>
-      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link
-            href="/"
-            className="flex items-center gap-3 text-slate-950 no-underline"
-          >
-            <Image
-              src="/logo.jpg"
-              alt="Worldspeak logo"
-              width={44}
-              height={44}
-              className="rounded-2xl object-cover shadow-sm"
-            />
-            <div className="leading-tight">
-              <div className="text-xl font-bold tracking-tight">Worldspeak</div>
-              <div className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-                Warszawa i online
-              </div>
+    <header className="sticky top-0 z-50 border-b border-[#eadcff] bg-white/92 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <Link href="/" onClick={handleLogoClick} className="flex items-center gap-3">
+          <Image
+            src="/logo.jpg"
+            alt="Worldspeak"
+            width={48}
+            height={48}
+            className="h-11 w-11 rounded-2xl object-cover shadow-sm"
+            priority
+          />
+          <div className="leading-tight">
+            <div className="text-xl font-bold tracking-tight text-slate-950">
+              Worldspeak
             </div>
+            <div className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+              Warszawa i online
+            </div>
+          </div>
+        </Link>
+
+        <nav className="hidden items-center gap-6 text-[15px] font-medium text-slate-600 lg:flex">
+          <Link
+            href="/zajecia-online"
+            onClick={handleOnlineClick}
+            className="transition hover:text-[#7c25f5]"
+          >
+            Zajęcia online
           </Link>
 
-          <nav className="hidden items-center gap-7 text-[15px] font-medium text-slate-600 lg:flex">
-            <Link href="/zajecia-online" className="transition hover:text-slate-950">
-              Zajęcia online
-            </Link>
+          <a
+            href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko-3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-[#7c25f5]"
+          >
+            Zajęcia Mokotów
+          </a>
 
-            <a
-              href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko-3"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-slate-950"
-            >
-              Zajęcia Mokotów
-            </a>
+          <a
+            href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-[#7c25f5]"
+          >
+            Zajęcia Wilanów
+          </a>
 
-            <a
-              href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko#kursy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-slate-950"
-            >
-              Zajęcia Wilanów
-            </a>
+          <Link
+            href="/#dlaczegomy"
+            onClick={handleSectionClick("dlaczegomy")}
+            className="transition hover:text-[#7c25f5]"
+          >
+            Dlaczego my
+          </Link>
 
-            <button
-              type="button"
-              onClick={() => setOpenAbout(true)}
-              className="cursor-pointer bg-transparent transition hover:text-slate-950"
-            >
-              O nas
-            </button>
-
-            <Link href="/#faq" className="transition hover:text-slate-950">
-              FAQ
-            </Link>
-
-            <Link href="/#kontakt" className="transition hover:text-slate-950">
-              Kontakt
-            </Link>
-          </nav>
+          <Link
+            href="/#faq"
+            onClick={handleSectionClick("faq")}
+            className="transition hover:text-[#7c25f5]"
+          >
+            FAQ
+          </Link>
 
           <Link
             href="/#kontakt"
-            className="hidden rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-violet-700 lg:inline-flex"
+            onClick={handleSectionClick("kontakt")}
+            className="transition hover:text-[#7c25f5]"
           >
-            Zapisz się
+            Kontakt
           </Link>
-        </div>
-      </header>
+        </nav>
 
-      {openAbout && (
-        <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm"
-          onClick={() => setOpenAbout(false)}
+        <Link
+          href="/#kontakt"
+          onClick={handleSignupClick}
+          className="hidden rounded-full bg-[#8b2cf5] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(139,44,245,0.28)] transition hover:-translate-y-0.5 hover:bg-[#741ce8] lg:inline-flex"
         >
-          <div
-            className="relative w-full max-w-4xl rounded-[2rem] border border-slate-200 bg-white p-8 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setOpenAbout(false)}
-              className="absolute top-5 right-5 flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-xl text-slate-600"
-            >
-              ×
-            </button>
+          Zapisz się
+        </Link>
 
-            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-              <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100">
-                <Image
-                  src="/founder.jpg"
-                  alt="Założycielka Worldspeak"
-                  width={700}
-                  height={900}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              <div>
-                <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-violet-700">
-                  O nas
-                </p>
-
-                <h2 className="text-4xl font-bold leading-tight text-slate-950">
-                  Poznaj założycielkę Worldspeak
-                </h2>
-
-                <p className="mt-5 text-lg leading-8 text-slate-600">
-                  Worldspeak to miejsce stworzone z myślą o nowoczesnej,
-                  uporządkowanej i skutecznej nauce języka. Stawiamy na
-                  praktyczną komunikację, dobrą atmosferę i realne postępy.
-                </p>
-
-                <p className="mt-5 text-lg leading-8 text-slate-600">
-                  Założycielka Worldspeak to doświadczona lektorka języków
-                  obcych, która od lat pracuje z dziećmi, młodzieżą i dorosłymi.
-                  Łączy profesjonalizm z indywidualnym podejściem, dbając o to,
-                  aby kursanci rozwijali pewność siebie i swobodę w używaniu
-                  języka.
-                </p>
-
-                <p className="mt-5 text-lg leading-8 text-slate-600">
-                  Przed podpisaniem umowy kursanci poznają prowadzącą lub
-                  prowadzącego zajęcia, aby mieć pełną jasność, kto będzie ich
-                  wspierał w procesie nauki.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+        <Link
+          href="/#kontakt"
+          onClick={handleSignupClick}
+          className="rounded-full bg-[#8b2cf5] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(139,44,245,0.28)] transition hover:-translate-y-0.5 hover:bg-[#741ce8] lg:hidden"
+        >
+          Zapisz się
+        </Link>
+      </div>
+    </header>
   )
 }

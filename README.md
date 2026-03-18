@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Worldspeak
 
-## Getting Started
+Strona szkoły językowej Worldspeak z formularzem kontaktowym i zapisem na zajęcia online.
 
-First, run the development server:
+## Lokalnie
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Produkcja i Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Projekt jest gotowy do wdrożenia na Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Zaimportuj repozytorium do Vercela.
+2. W `Settings -> Environment Variables` dodaj zmienne z pliku `.env.example`.
+3. Ustaw `NEXT_PUBLIC_SITE_URL` na adres domeny, np. `https://worldspeak.pl`.
+4. Wdróż projekt.
 
-## Learn More
+## Wysyłka formularza
 
-To learn more about Next.js, take a look at the following resources:
+Formularz korzysta z SMTP. Po wdrożeniu ustaw:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `CONTACT_EMAIL`
+- `MAIL_FROM`
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `NEXT_PUBLIC_SITE_URL`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Po poprawnym ustawieniu zmiennych wiadomości z formularza będą trafiały na `kontakt@worldspeak.pl`.
 
-## Deploy on Vercel
+## Pliki prawne
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Na stronie są gotowe podstrony:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/polityka-prywatnosci`
+- `/rodo`
+
+Przed publikacją warto jeszcze sprawdzić treść z prawnikiem lub księgowością, jeśli chcesz dopasować ją do dokładnej formy działalności.
