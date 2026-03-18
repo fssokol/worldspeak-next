@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(139,44,245,0.12),transparent_30%),radial-gradient(circle_at_top_right,rgba(217,188,255,0.2),transparent_24%),linear-gradient(to_bottom,#ffffff,rgba(251,248,255,0.98))]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:py-24">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-5 sm:px-6 sm:pb-16 sm:pt-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:pb-24 lg:pt-10">
         <div>
           <h1 className="max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight text-slate-950 lg:text-7xl">
             Zacznij naukę języka z Worldspeak!
