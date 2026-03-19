@@ -89,9 +89,9 @@ export default function Header() {
           <Image
             src="/logo-mark.png"
             alt="Worldspeak"
-            width={48}
-            height={48}
-            className="h-11 w-11 rounded-2xl object-cover shadow-sm"
+            width={56}
+            height={56}
+            className="h-12 w-12 rounded-2xl object-cover shadow-sm sm:h-14 sm:w-14"
             priority
           />
           <div className="leading-tight">
