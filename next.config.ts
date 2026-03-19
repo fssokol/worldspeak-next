@@ -31,6 +31,50 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: rootDir,
   },
+  async redirects() {
+    return [
+      {
+        source: "/kontakt",
+        destination: "/#kontakt",
+        permanent: true,
+      },
+      {
+        source: "/o-nas",
+        destination: "/#dlaczegomy",
+        permanent: true,
+      },
+      {
+        source: "/konwersacje-online",
+        destination: "/zajecia-online",
+        permanent: true,
+      },
+      {
+        source: "/kursy-indywidualne",
+        destination: "/#kontakt",
+        permanent: true,
+      },
+      {
+        source: "/kursy-grupowe",
+        destination: "/#dlaczegomy",
+        permanent: true,
+      },
+      {
+        source: "/dla-firm",
+        destination: "/#kontakt",
+        permanent: true,
+      },
+      {
+        source: "/przedszkola",
+        destination: "/#kontakt",
+        permanent: true,
+      },
+      {
+        source: "/egzaminy",
+        destination: "/#faq",
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

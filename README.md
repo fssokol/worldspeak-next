@@ -15,8 +15,7 @@ Projekt jest gotowy do wdrożenia na Vercel.
 
 1. Zaimportuj repozytorium do Vercela.
 2. W `Settings -> Environment Variables` dodaj zmienne z pliku `.env.example`.
-3. Ustaw `NEXT_PUBLIC_SITE_URL` na adres domeny, np. `https://wordspeak.pl`.
-4. Wdróż projekt.
+3. Wdróż projekt.
 
 ## Wysyłka formularza
 
@@ -29,7 +28,6 @@ Formularz korzysta z SMTP. Po wdrożeniu ustaw:
 - `SMTP_SECURE`
 - `SMTP_USER`
 - `SMTP_PASS`
-- `NEXT_PUBLIC_SITE_URL`
 
 Po poprawnym ustawieniu zmiennych wiadomości z formularza będą trafiały na `kontakt@worldspeak.pl`.
 

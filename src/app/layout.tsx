@@ -3,7 +3,7 @@ import "./globals.css"
 import Footer from "../components/layout/Footer"
 import Header from "../components/layout/Header"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://wordspeak.pl"
+const siteUrl = "https://worldspeak.pl"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -16,12 +16,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon.jpg",
-        type: "image/jpeg",
+        url: "/favicon.ico",
+        type: "image/x-icon",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
       },
     ],
-    shortcut: "/icon.jpg",
-    apple: "/apple-icon.jpg",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "Worldspeak | Szkoła językowa w Warszawie",
