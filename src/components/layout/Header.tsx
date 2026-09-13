@@ -114,7 +114,7 @@ export default function Header() {
           </Link>
 
           <a
-            href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko-3"
+            href="https://www.strefazajec.pl/course/view/id/89409"
             target="_blank"
             rel="noopener noreferrer"
             className="transition hover:text-[#7c25f5]"
