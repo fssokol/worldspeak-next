@@ -24,88 +24,106 @@ const lecturerInfo: Record<LecturerKey, { name: string; description: string }> =
   },
   zuzanna: {
     name: "Zuzanna Gutierrez",
-    description: "Język hiszpański • zajęcia indywidualne i grupowe",
+    description: "Język angielski i hiszpański • zajęcia indywidualne i grupowe",
   },
 }
 
 const languageLecturers: Record<Language, LecturerKey[]> = {
-  angielski: ["wiktoria", "weronika"],
+  angielski: ["wiktoria", "weronika", "zuzanna"],
   hiszpanski: ["zuzanna"],
 }
 
-const courses: Record<LecturerKey, Course[]> = {
-  wiktoria: [
-    {
-      name: "Bajkowy angielski",
-      details: "5–6 lat • poniedziałek + środa, 16:30–17:15",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86844",
-    },
-    {
-      name: "Egzamin 8-klasisty",
-      details: "13–15 lat • poniedziałek + środa, 17:30–18:30",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86845",
-    },
-    {
-      name: "Konwersacje dla licealistów",
-      details: "15–19 lat • poniedziałek + środa, 18:30–19:30",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86846",
-    },
-    {
-      name: "Fluent Conversations A2–B1",
-      details: "Dorośli 18+ • środa, 19:30–20:30",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86848",
-    },
-    {
-      name: "Hello English",
-      details: "4–6 lat • wtorek, 16:30–17:15",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86855",
-    },
-    {
-      name: "English for Kids",
-      details: "7–10 lat • wtorek, 17:20–18:20",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86856",
-    },
-    {
-      name: "Tween English",
-      details: "10–12 lat • wtorek, 18:25–19:25",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86857",
-    },
-    {
-      name: "Świetlica z angielskim – SP 358, kl. 3b",
-      details: "9–11 lat • 2× w tygodniu",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/87829",
-    },
-  ],
-  weronika: [
-    {
-      name: "Zajęcia indywidualne z języka angielskiego",
-      details: "Zapis bezpośrednio do zajęć Weroniki Krych",
-      location: "Wilanów",
-      url: "https://www.strefazajec.pl/course/view/id/96912",
-    },
-  ],
-  zuzanna: [
-    {
-      name: "Język hiszpański dla dzieci",
-      details: "8–10 lat • czwartek, 17:30–18:30",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86867",
-    },
-    {
-      name: "Język hiszpański dla młodzieży",
-      details: "14–17 lat • czwartek, 18:35–19:35",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/87315",
-    },
-  ],
+const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
+  angielski: {
+    wiktoria: [
+      {
+        name: "Bajkowy angielski",
+        details: "5–6 lat • poniedziałek + środa, 16:30–17:15",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86844",
+      },
+      {
+        name: "Egzamin 8-klasisty",
+        details: "13–15 lat • poniedziałek + środa, 17:30–18:30",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86845",
+      },
+      {
+        name: "Konwersacje dla licealistów",
+        details: "15–19 lat • poniedziałek + środa, 18:30–19:30",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86846",
+      },
+      {
+        name: "Fluent Conversations A2–B1",
+        details: "Dorośli 18+ • środa, 19:30–20:30",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86848",
+      },
+      {
+        name: "Hello English",
+        details: "4–6 lat • wtorek, 16:30–17:15",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86855",
+      },
+      {
+        name: "English for Kids",
+        details: "7–10 lat • wtorek, 17:20–18:20",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86856",
+      },
+      {
+        name: "Tween English",
+        details: "10–12 lat • wtorek, 18:25–19:25",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86857",
+      },
+      {
+        name: "Świetlica z angielskim – SP 358, kl. 3b",
+        details: "9–11 lat • 2× w tygodniu",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/87829",
+      },
+    ],
+    weronika: [
+      {
+        name: "Zajęcia indywidualne z języka angielskiego",
+        details: "Zapis bezpośrednio do zajęć Weroniki Krych",
+        location: "Wilanów",
+        url: "https://www.strefazajec.pl/course/view/id/96912",
+      },
+    ],
+    zuzanna: [
+      {
+        name: "Zajęcia indywidualne z języka angielskiego",
+        details: "Zobacz dostępne terminy i zapisy u Zuzanny Towarek-Gutierrez",
+        location: "Wilanów",
+        url: "https://www.strefazajec.pl/instruktor/Zuzanna-Towarek",
+      },
+    ],
+  },
+  hiszpanski: {
+    zuzanna: [
+      {
+        name: "Indywidualna nauka języka hiszpańskiego",
+        details: "Dzieci, młodzież i dorośli • termin ustalany indywidualnie",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/instruktor/Zuzanna-Towarek",
+      },
+      {
+        name: "Język hiszpański dla dzieci",
+        details: "8–10 lat • czwartek, 17:30–18:30",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86867",
+      },
+      {
+        name: "Język hiszpański dla młodzieży",
+        details: "14–17 lat • czwartek, 18:35–19:35",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/87315",
+      },
+    ],
+  },
 }
 
 export default function WilanowPage() {
@@ -121,6 +139,8 @@ export default function WilanowPage() {
     setLanguage(null)
     setLecturer(null)
   }
+
+  const visibleCourses = language && lecturer ? courses[language][lecturer] ?? [] : []
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(139,44,245,0.11),transparent_28%),linear-gradient(to_bottom,#ffffff,#fbf8ff)] px-4 py-12 sm:px-6 lg:px-8">
@@ -148,7 +168,7 @@ export default function WilanowPage() {
             {!language
               ? "Najpierw wybierz język, a potem pokażemy dostępnych lektorów."
               : lecturer
-                ? "Wybierz konkretne zajęcia. Każdy przycisk prowadzi bezpośrednio do właściwego kursu w Strefie Zajęć."
+                ? "Wybierz konkretne zajęcia. Każdy przycisk prowadzi bezpośrednio do właściwych zapisów w Strefie Zajęć."
                 : "Wybierz osobę prowadzącą, aby zobaczyć konkretne grupy i zajęcia."}
           </p>
         </div>
@@ -167,7 +187,7 @@ export default function WilanowPage() {
                 Język angielski
               </h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Zajęcia z Wiktorią Symeczko lub Weroniką Krych.
+                Zajęcia z Wiktorią Symeczko, Weroniką Krych lub Zuzanną Gutierrez.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#7a20f2]">
                 Wybierz angielski
@@ -216,7 +236,7 @@ export default function WilanowPage() {
             </div>
 
             <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {courses[lecturer].map((course) => (
+              {visibleCourses.map((course) => (
                 <a
                   key={`${course.name}-${course.location}`}
                   href={course.url}
