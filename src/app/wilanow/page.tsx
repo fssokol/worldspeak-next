@@ -83,24 +83,6 @@ const courses: Record<LecturerKey, Course[]> = {
       location: "Branickiego 17",
       url: "https://www.strefazajec.pl/course/view/id/87829",
     },
-    {
-      name: "Exam Ready: Egzamin Ósmoklasisty",
-      details: "13–15 lat • wtorek + czwartek, 18:00–19:00",
-      location: "Kolegiacka 3",
-      url: "https://www.strefazajec.pl/course/view/id/88978",
-    },
-    {
-      name: "High School English",
-      details: "15–17 lat • wtorek + czwartek, 19:00–20:00",
-      location: "Kolegiacka 3",
-      url: "https://www.strefazajec.pl/course/view/id/88979",
-    },
-    {
-      name: "Exam Ready: Matura Rozszerzona",
-      details: "17–20 lat • wtorek + czwartek, 20:00–21:00",
-      location: "Kolegiacka 3",
-      url: "https://www.strefazajec.pl/course/view/id/88980",
-    },
   ],
   weronika: [
     {
