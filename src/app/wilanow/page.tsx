@@ -122,6 +122,12 @@ const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
         location: "Branickiego 17",
         url: "https://www.strefazajec.pl/course/view/id/87315",
       },
+      {
+        name: "Język hiszpański dla dorosłych",
+        details: "18+ • czwartek, 19:40–20:40",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/87317",
+      },
     ],
   },
 }
