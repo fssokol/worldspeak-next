@@ -92,6 +92,12 @@ const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
         location: "Wilanów",
         url: "https://www.strefazajec.pl/course/view/id/96912",
       },
+      {
+        name: "Zajęcia indywidualne z języka angielskiego",
+        details: "Dodatkowy bezpośredni zapis do zajęć Weroniki Krych",
+        location: "Wilanów",
+        url: "https://www.strefazajec.pl/course/view/id/96933",
+      },
     ],
     zuzanna: [
       {
@@ -244,7 +250,7 @@ export default function WilanowPage() {
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {visibleCourses.map((course) => (
                 <a
-                  key={`${course.name}-${course.location}`}
+                  key={`${course.name}-${course.location}-${course.url}`}
                   href={course.url}
                   target="_blank"
                   rel="noopener noreferrer"
