@@ -4,7 +4,7 @@ const lecturers = [
   {
     name: "Wiktoria Symeczko",
     description: "Język angielski • zajęcia indywidualne i grupowe",
-    individualUrl: null,
+    individualUrl: "https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko",
   },
   {
     name: "Weronika Krych",
@@ -14,7 +14,7 @@ const lecturers = [
   {
     name: "Zuzanna Gutierrez",
     description: "Język hiszpański • zajęcia indywidualne",
-    individualUrl: null,
+    individualUrl: "https://www.strefazajec.pl/instruktor/Zuzanna-Towarek",
   },
 ]
 
@@ -59,21 +59,15 @@ export default function WilanowPage() {
                 {lecturer.description}
               </p>
 
-              {lecturer.individualUrl ? (
-                <a
-                  href={lecturer.individualUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8b2cf5] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(139,44,245,0.23)] transition hover:-translate-y-0.5 hover:bg-[#741ce8]"
-                >
-                  Zajęcia indywidualne
-                  <span aria-hidden="true">→</span>
-                </a>
-              ) : (
-                <div className="mt-6 inline-flex w-full cursor-default items-center justify-center rounded-full border border-[#e7daf8] bg-[#faf7ff] px-5 py-3 text-sm font-semibold text-slate-400">
-                  Zajęcia indywidualne
-                </div>
-              )}
+              <a
+                href={lecturer.individualUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8b2cf5] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(139,44,245,0.23)] transition hover:-translate-y-0.5 hover:bg-[#741ce8]"
+              >
+                Zajęcia indywidualne
+                <span aria-hidden="true">→</span>
+              </a>
             </article>
           ))}
         </div>
