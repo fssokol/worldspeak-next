@@ -12,6 +12,7 @@ npm run dev
 ## Produkcja i Vercel
 
 Projekt jest gotowy do wdrożenia na Vercel.
+Automatyczne wdrożenia produkcyjne są powiązane z branchem `main`.
 
 1. Zaimportuj repozytorium do Vercela.
 2. W `Settings -> Environment Variables` dodaj zmienne z pliku `.env.example`.
