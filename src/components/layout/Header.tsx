@@ -122,14 +122,12 @@ export default function Header() {
             Zajęcia Mokotów
           </a>
 
-          <a
-            href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/wilanow"
             className="transition hover:text-[#7c25f5]"
           >
             Zajęcia Wilanów
-          </a>
+          </Link>
 
           <Link
             href="/#dlaczegomy"
