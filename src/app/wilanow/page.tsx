@@ -20,7 +20,7 @@ const lecturerInfo: Record<LecturerKey, { name: string; description: string }> =
   },
   weronika: {
     name: "Weronika Krych",
-    description: "Język angielski • zajęcia indywidualne",
+    description: "Język angielski • odbieranie ze szkoły i zajęcia",
   },
   zuzanna: {
     name: "Zuzanna Gutierrez",
@@ -87,14 +87,14 @@ const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
     ],
     weronika: [
       {
-        name: "Zajęcia indywidualne z języka angielskiego",
-        details: "Zapis bezpośrednio do zajęć Weroniki Krych",
+        name: "Odbieranie ze szkoły + język angielski",
+        details: "Bezpośredni zapis do odbierania dziecka ze szkoły i zajęć z Weroniką Krych",
         location: "Wilanów",
         url: "https://www.strefazajec.pl/course/view/id/96912",
       },
       {
-        name: "Zajęcia indywidualne z języka angielskiego",
-        details: "Dodatkowy bezpośredni zapis do zajęć Weroniki Krych",
+        name: "Odbieranie ze szkoły + język angielski",
+        details: "Bezpośredni zapis do odbierania dziecka ze szkoły i zajęć z Weroniką Krych",
         location: "Wilanów",
         url: "https://www.strefazajec.pl/course/view/id/96933",
       },
