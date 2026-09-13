@@ -71,10 +71,8 @@ export default function HeroSection() {
               </p>
             </a>
 
-            <a
-              href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/wilanow"
               className="rounded-[1.6rem] border border-white/12 bg-white/12 p-5 transition hover:bg-white/18"
             >
               <div className="inline-flex rounded-full bg-white/12 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-white/85">
@@ -86,9 +84,9 @@ export default function HeroSection() {
               </div>
 
               <p className="mt-2 text-sm leading-6 text-white/85">
-                Nowoczesne zajęcia blisko Ciebie.
+                Wybierz lektora i rodzaj zajęć.
               </p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
