@@ -53,7 +53,7 @@ export default function HeroSection() {
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <a
-              href="https://www.strefazajec.pl/instruktor/Wiktoria-Symeczko-3"
+              href="https://www.strefazajec.pl/course/view/id/89409"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-[1.6rem] border border-white/12 bg-white/12 p-5 transition hover:bg-white/18"
