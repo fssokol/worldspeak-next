@@ -16,7 +16,7 @@ type Course = {
 const lecturerInfo: Record<LecturerKey, { name: string; description: string }> = {
   wiktoria: {
     name: "Wiktoria Symeczko",
-    description: "Język angielski • zajęcia indywidualne i grupowe",
+    description: "Język angielski • zajęcia grupowe",
   },
   weronika: {
     name: "Weronika Krych",
@@ -84,12 +84,6 @@ const courses: Record<LecturerKey, Course[]> = {
       url: "https://www.strefazajec.pl/course/view/id/87829",
     },
     {
-      name: "Zajęcia indywidualne",
-      details: "9+ • termin ustalany indywidualnie",
-      location: "Branickiego 17",
-      url: "https://www.strefazajec.pl/course/view/id/86843",
-    },
-    {
       name: "Exam Ready: Egzamin Ósmoklasisty",
       details: "13–15 lat • wtorek + czwartek, 18:00–19:00",
       location: "Kolegiacka 3",
@@ -106,18 +100,6 @@ const courses: Record<LecturerKey, Course[]> = {
       details: "17–20 lat • wtorek + czwartek, 20:00–21:00",
       location: "Kolegiacka 3",
       url: "https://www.strefazajec.pl/course/view/id/88980",
-    },
-    {
-      name: "Zajęcia indywidualne",
-      details: "9+ • termin ustalany indywidualnie",
-      location: "Kolegiacka 3",
-      url: "https://www.strefazajec.pl/course/view/id/88981",
-    },
-    {
-      name: "Świetlica z angielskim – wolne terminy dla szkół",
-      details: "9–11 lat • 2× w tygodniu",
-      location: "Radosna 11",
-      url: "https://www.strefazajec.pl/course/view/id/90269",
     },
   ],
   weronika: [
