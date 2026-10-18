@@ -8,7 +8,6 @@ const team = [
     subjects: "Język angielski i francuski",
     description:
       "Absolwentka filologii na Uniwersytecie Warszawskim. Doświadczenie zdobywała, prowadząc zajęcia dla dzieci, młodzieży i dorosłych. W Worldspeak odpowiada za kierunek rozwoju szkoły, programy i jakość nauczania.",
-    initials: "WS",
     photo: "/lektorzy/wiktoria-symeczko.jpg",
   },
   {
@@ -17,7 +16,6 @@ const team = [
     subjects: "Język angielski i hiszpański",
     description:
       "Studiuje lingwistykę stosowaną na Uniwersytecie Warszawskim. Prowadzi lekcje indywidualne oraz Tween English dla uczniów klas 4–6. Stawia na uważność, kreatywność i atmosferę sprzyjającą swobodnej komunikacji.",
-    initials: "AG",
     photo: "/lektorzy/alicja-golaszewska.jpg",
   },
   {
@@ -26,7 +24,6 @@ const team = [
     subjects: "Język angielski",
     description:
       "Studiuje na Uniwersytecie Warszawskim, rozwijając kompetencje w nauczaniu języka angielskiego i niemieckiego. Prowadzi zajęcia świetlicowe dla uczniów SP 358 oraz lekcje indywidualne dla dzieci, młodzieży i dorosłych.",
-    initials: "WK",
     photo: "/lektorzy/weronika-krych.jpg",
   },
   {
@@ -35,7 +32,6 @@ const team = [
     subjects: "Język hiszpański i angielski",
     description:
       "Prowadzi lekcje indywidualne i grupowe. Podczas zajęć pomaga rozwijać komunikację i pewność w używaniu języka, dobierając tempo i materiał do potrzeb uczestników.",
-    initials: "ZT",
     photo: "/lektorzy/zuzanna-towarek-gutierrez.jpg",
   },
 ] as const
@@ -90,21 +86,13 @@ export default function TeamSection() {
                 className="flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-[#eadcff] bg-[#fcf9ff] shadow-[0_12px_42px_rgba(74,35,130,0.06)]"
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-[#f6efff] via-[#ede0ff] to-[#d7b9ff]">
-                  {person.photo ? (
-                    <Image
-                      src={person.photo}
-                      alt={`Portret: ${person.name}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-top"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center">
-                      <div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-white/60 text-4xl font-semibold tracking-tight text-[#6921bc] shadow-sm">
-                        {person.initials}
-                      </div>
-                    </div>
-                  )}
+                  <Image
+                    src={person.photo}
+                    alt={`Portret: ${person.name}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover object-top"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col px-5 pb-6 pt-5">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8b2cf5]">
