@@ -9,7 +9,7 @@ const team = [
     description:
       "Absolwentka filologii na Uniwersytecie Warszawskim. Doświadczenie zdobywała, prowadząc zajęcia dla dzieci, młodzieży i dorosłych. W Worldspeak odpowiada za kierunek rozwoju szkoły, programy i jakość nauczania.",
     initials: "WS",
-    photo: null,
+    photo: "/lektorzy/wiktoria-symeczko.jpg",
   },
   {
     name: "Alicja Gołaszewska",
@@ -36,7 +36,7 @@ const team = [
     description:
       "Prowadzi lekcje indywidualne i grupowe. Podczas zajęć pomaga rozwijać komunikację i pewność w używaniu języka, dobierając tempo i materiał do potrzeb uczestników.",
     initials: "ZT",
-    photo: null,
+    photo: "/lektorzy/zuzanna-towarek-gutierrez.jpg",
   },
 ] as const
 

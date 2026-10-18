@@ -18,6 +18,7 @@ const lecturerInfo: Record<LecturerKey, { name: string; description: string; pho
   wiktoria: {
     name: "Wiktoria Symeczko",
     description: "Język angielski • zajęcia grupowe",
+    photo: "/lektorzy/wiktoria-symeczko.jpg",
   },
   weronika: {
     name: "Weronika Krych",
@@ -32,6 +33,7 @@ const lecturerInfo: Record<LecturerKey, { name: string; description: string; pho
   zuzanna: {
     name: "Zuzanna Towarek-Gutierrez",
     description: "Język angielski i hiszpański • zajęcia indywidualne i grupowe",
+    photo: "/lektorzy/zuzanna-towarek-gutierrez.jpg",
   },
 }
 
