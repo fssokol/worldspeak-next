@@ -37,7 +37,7 @@ const lecturerInfo: Record<LecturerKey, { name: string; description: string; pho
 
 const languageLecturers: Record<Language, LecturerKey[]> = {
   angielski: ["wiktoria", "alicja", "weronika", "zuzanna"],
-  hiszpanski: ["zuzanna"],
+  hiszpanski: ["alicja", "zuzanna"],
 }
 
 const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
@@ -78,12 +78,6 @@ const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
         details: "7–10 lat • wtorek, 17:20–18:20",
         location: "Branickiego 17",
         url: "https://www.strefazajec.pl/course/view/id/86856",
-      },
-      {
-        name: "Tween English",
-        details: "10–12 lat • wtorek, 18:25–19:25",
-        location: "Branickiego 17",
-        url: "https://www.strefazajec.pl/course/view/id/86857",
       },
       {
         name: "Świetlica z angielskim – SP 358, kl. 3b",
@@ -130,6 +124,14 @@ const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
     ],
   },
   hiszpanski: {
+    alicja: [
+      {
+        name: "Indywidualne lekcje hiszpańskiego – zapytaj o termin",
+        details: "Lekcje z Alicją Gołaszewską • termin do uzgodnienia",
+        location: "Wilanów lub online",
+        url: "/#kontakt",
+      },
+    ],
     zuzanna: [
       {
         name: "Indywidualna nauka języka hiszpańskiego",
@@ -240,7 +242,7 @@ export default function WilanowPage() {
                 Język hiszpański
               </h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Zajęcia z Zuzanną Towarek-Gutierrez.
+                Hiszpański z Alicją Gołaszewską lub Zuzanną Towarek-Gutierrez.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#7a20f2]">
                 Wybierz hiszpański
@@ -289,7 +291,7 @@ export default function WilanowPage() {
                     {course.details}
                   </p>
                   <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#7a20f2]">
-                    Przejdź do zapisów
+                    {course.url === "/#kontakt" ? "Zapytaj o termin" : "Przejdź do zapisów"}
                     <span className="transition group-hover:translate-x-1" aria-hidden="true">→</span>
                   </div>
                 </a>
