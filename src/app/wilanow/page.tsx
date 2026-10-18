@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 
 type Language = "angielski" | "hiszpanski"
-type LecturerKey = "wiktoria" | "weronika" | "zuzanna"
+type LecturerKey = "wiktoria" | "weronika" | "alicja" | "zuzanna"
 
 type Course = {
   name: string
@@ -13,7 +14,7 @@ type Course = {
   location?: string
 }
 
-const lecturerInfo: Record<LecturerKey, { name: string; description: string }> = {
+const lecturerInfo: Record<LecturerKey, { name: string; description: string; photo?: string }> = {
   wiktoria: {
     name: "Wiktoria Symeczko",
     description: "Język angielski • zajęcia grupowe",
@@ -21,15 +22,21 @@ const lecturerInfo: Record<LecturerKey, { name: string; description: string }> =
   weronika: {
     name: "Weronika Krych",
     description: "Język angielski • odbieranie ze szkoły i zajęcia",
+    photo: "/lektorzy/weronika-krych.jpg",
+  },
+  alicja: {
+    name: "Alicja Gołaszewska",
+    description: "Język angielski i hiszpański • zajęcia indywidualne i Tween English",
+    photo: "/lektorzy/alicja-golaszewska.jpg",
   },
   zuzanna: {
-    name: "Zuzanna Gutierrez",
+    name: "Zuzanna Towarek-Gutierrez",
     description: "Język angielski i hiszpański • zajęcia indywidualne i grupowe",
   },
 }
 
 const languageLecturers: Record<Language, LecturerKey[]> = {
-  angielski: ["wiktoria", "weronika", "zuzanna"],
+  angielski: ["wiktoria", "alicja", "weronika", "zuzanna"],
   hiszpanski: ["zuzanna"],
 }
 
@@ -97,6 +104,20 @@ const courses: Record<Language, Partial<Record<LecturerKey, Course[]>>> = {
         details: "Bezpośredni zapis do odbierania dziecka ze szkoły i zajęć z Weroniką Krych",
         location: "Wilanów",
         url: "https://www.strefazajec.pl/course/view/id/96933",
+      },
+    ],
+    alicja: [
+      {
+        name: "Indywidualna nauka języka angielskiego",
+        details: "Od 9 lat • wtorek, godzina ustalana indywidualnie",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/98053",
+      },
+      {
+        name: "Tween English",
+        details: "Uczniowie klas 4–6 • wtorek, 18:25–19:25",
+        location: "Branickiego 17",
+        url: "https://www.strefazajec.pl/course/view/id/86857",
       },
     ],
     zuzanna: [
@@ -199,7 +220,7 @@ export default function WilanowPage() {
                 Język angielski
               </h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Zajęcia z Wiktorią Symeczko, Weroniką Krych lub Zuzanną Gutierrez.
+                Zajęcia z Wiktorią Symeczko, Alicją Gołaszewską, Weroniką Krych lub Zuzanną Towarek-Gutierrez.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#7a20f2]">
                 Wybierz angielski
@@ -219,7 +240,7 @@ export default function WilanowPage() {
                 Język hiszpański
               </h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Zajęcia z Zuzanną Gutierrez.
+                Zajęcia z Zuzanną Towarek-Gutierrez.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#7a20f2]">
                 Wybierz hiszpański
@@ -297,9 +318,15 @@ export default function WilanowPage() {
                     onClick={() => setLecturer(lecturerKey)}
                     className="rounded-[2rem] border border-[#eadcff] bg-white p-6 text-left shadow-[0_18px_55px_rgba(120,46,214,0.10)] transition hover:-translate-y-1 hover:border-[#d4b7ff]"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7a20f2] to-[#d39cff] text-lg font-bold text-white shadow-sm">
-                      {item.name.charAt(0)}
-                    </div>
+                    {item.photo ? (
+                      <div className="relative h-20 w-20 overflow-hidden rounded-2xl">
+                        <Image src={item.photo} alt="" fill sizes="80px" className="object-cover" />
+                      </div>
+                    ) : (
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7a20f2] to-[#d39cff] text-lg font-bold text-white shadow-sm">
+                        {item.name.charAt(0)}
+                      </div>
+                    )}
 
                     <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950">
                       {item.name}

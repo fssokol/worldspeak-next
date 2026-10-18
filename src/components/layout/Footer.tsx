@@ -7,6 +7,9 @@ export default function Footer() {
         <div>© {new Date().getFullYear()} Worldspeak. Wszelkie prawa zastrzeżone.</div>
 
         <div className="flex flex-wrap gap-4">
+          <Link href="/#onas" className="transition hover:text-[#8b2cf5]">
+            O nas i zespół
+          </Link>
           <Link
             href="/polityka-prywatnosci"
             className="transition hover:text-[#8b2cf5]"

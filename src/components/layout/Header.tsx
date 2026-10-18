@@ -130,11 +130,11 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/#dlaczegomy"
-            onClick={handleSectionClick("dlaczegomy")}
+            href="/#onas"
+            onClick={handleSectionClick("onas")}
             className="transition hover:text-[#7c25f5]"
           >
-            Dlaczego my
+            O nas i zespół
           </Link>
 
           <Link
