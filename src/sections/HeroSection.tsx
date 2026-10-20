@@ -25,7 +25,7 @@ export default function HeroSection() {
             </div>
 
             <div className="mt-3 text-sm font-medium text-[#8b2cf5]">
-              Start od września
+              Twój czas na swobodną rozmowę
             </div>
 
             <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600">
