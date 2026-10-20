@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/zajecia-online",
+        destination: "https://online.worldspeak.pl/zapisy",
+        permanent: false,
+      },
+      {
         source: "/kontakt",
         destination: "/#kontakt",
         permanent: true,
